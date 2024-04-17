@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Power Data</title>
+</head>
+<body>
+<h1>Power Data</h1>
+<table border="1">
+    <tr>
+        <th>PES ID</th>
+        <th>Date and Time (GMT)</th>
+        <th>Generation (MW)</th>
+    </tr>
+    <tr th:each="data : ${powerData}">
+        <td th:text="${data.pesId}">PES ID</td>
+        <td th:text="${data.datetimeGMT}">Date and Time (GMT)</td>
+        <td th:text="${data.generationMW}">Generation (MW)</td>
+    </tr>
+</table>
+<form action="#" th:action="@{/}" method="get">
+    <button type="submit">Refresh</button>
+</form>
+</body>
+</html>
